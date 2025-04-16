@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title %}ReadSprint{% endblock %}
+
+{% block content %}
+<section class="customize-section">
+    <h1>英文カスタマイズ</h1>
+    
+    <form action="{{ url_for('main.generate') }}" method="POST" class="customize-form">
+        <div class="form-group">
+            <div class="form-field">
+                <label for="difficulty">難易度</label>
+                <select id="difficulty" name="difficulty" required>
+                    {% for level, name in difficulties.items() %}
+                        <option value="{{ level }}">{{ name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="form-field">
+                <label for="style">文章スタイル</label>
+                <select id="style" name="style" required>
+                    {% for style in styles %}
+                        <option value="{{ style }}">{{ style }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="form-field">
+                <label>含める単語（最大5つまで）</label>
+                <div id="target-words-container">
+                    <div class="word-input-group">
+                        <input type="text" 
+                               name="target_words[]" 
+                               class="word-input"
+                               maxlength="30"
+                               pattern="[A-Za-z\s]+"
+                               placeholder="単語を入力">
+                    </div>
+                </div>
+                <button type="button" id="add-word-btn" class="btn btn-outline btn-sm">
+                    単語を追加
+                </button>
+                <small class="form-help">※ オプション: 指定の単語を含む英文を生成します（各単語は30文字まで）</small>
+            </div>
+        </div>
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary" id="generate-btn">
+                読解開始
+            </button>
+            <p class="generation-notice">※ 文章の生成には少々時間がかかります。</p>
+        </div>
+    </form>
+</section>
+
+{% endblock %}

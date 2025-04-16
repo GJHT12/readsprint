@@ -1,0 +1,138 @@
+<!-- terms.html -->
+{% extends "base.html" %}
+
+{% block title %}ReadSprint{% endblock %}
+
+{% block extra_css %}
+<style>
+    .legal-content {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 2rem;
+        background: #FFFFFF;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+    }
+
+    .legal-header {
+        text-align: center;
+        margin-bottom: 3rem;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid #E5E7EB;
+    }
+
+    .legal-header h1 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        color: #2C3E50;
+    }
+
+    .section {
+        margin-bottom: 2.5rem;
+    }
+
+    .section h2 {
+        font-size: 1.5rem;
+        margin: 2rem 0 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid #E5E7EB;
+        color: #2C3E50;
+    }
+
+    .section h3 {
+        font-size: 1.2rem;
+        margin: 1.5rem 0 1rem;
+        color: #4A5568;
+    }
+
+    .section p {
+        margin: 1rem 0;
+        text-align: justify;
+        line-height: 1.8;
+    }
+
+    .section ul {
+        padding-left: 1.5rem;
+        margin: 1rem 0;
+    }
+
+    .section li {
+        margin: 0.5rem 0;
+        line-height: 1.8;
+    }
+
+    .last-updated {
+        margin-top: 3rem;
+        padding-top: 1rem;
+        border-top: 1px solid #E5E7EB;
+        font-size: 0.9rem;
+        color: #666;
+        text-align: center;
+    }
+
+    @media (max-width: 768px) {
+        .legal-content {
+            padding: 1rem;
+        }
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="legal-content">
+    <div class="legal-header">
+        <h1>利用規約</h1>
+    </div>
+
+    <div class="section">
+        <h2>1. はじめに</h2>
+        <p>この利用規約（以下「本規約」）は、ReadSprint（以下「当サービス」）の利用条件を定めるものです。ユーザーの皆様は、本規約に同意の上、当サービスをご利用ください。</p>
+    </div>
+
+    <div class="section">
+        <h2>2. サービスの内容</h2>
+        <p>当サービスは、オンラインの英語学習プラットフォームです。提供される英文及び日本語訳は全てAIによって生成されるものです。また全てのサービスは無料で提供されます。</p>
+    </div>
+
+    <div class="section">
+        <h2>3. 利用条件</h2>
+        <h3>3.1 利用資格</h3>
+        <p>当サービスは、以下の条件を満たす方がご利用いただけます：</p>
+        <ul>
+            <li>本規約に同意していること</li>
+        </ul>
+
+        <h3>3.2 禁止事項</h3>
+        <p>当サービスの利用にあたり、以下の行為を禁止します：</p>
+        <ul>
+            <li>法令または公序良俗に違反する行為</li>
+            <li>当サービスのAIによるコンテンツ生成機能の不正利用や濫用</li>
+            <li>当サービスの運営を妨害する行為</li>
+            <li>不正アクセスやウイルス送信等の有害行為</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>4. 知的財産権</h2>
+        <p>当サービスに関する知的財産権は、全て当サービスの運営者に帰属します。</p>
+    </div>
+
+    <div class="section">
+        <h2>5. 免責事項</h2>
+        <ul>
+            <li>当サービスの内容は予告なく変更または中止される場合があります</li>
+            <li>システム障害や通信障害による損害、当サービスの利用により生じた損害について、当サービスは一切の責任を負いません</li>
+            <li>AIによって生成されたコンテンツの完全性・正確性を保証することはできません</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>6. 規約の変更</h2>
+        <p>当サービスは、必要に応じて本規約を変更することがあります。変更後の規約は、当サイトに掲載したときから効力を生じるものとします。</p>
+    </div>
+
+    <div class="last-updated">
+        最終更新日: 2025年1月27日
+    </div>
+</div>
+{% endblock %}

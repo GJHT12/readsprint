@@ -1,0 +1,135 @@
+<!-- privacy.html -->
+{% extends "base.html" %}
+
+{% block title %}ReadSprint{% endblock %}
+
+{% block extra_css %}
+<style>
+    .legal-content {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 2rem;
+        background: #FFFFFF;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+    }
+
+    .legal-header {
+        text-align: center;
+        margin-bottom: 3rem;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid #E5E7EB;
+    }
+
+    .legal-header h1 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        color: #2C3E50;
+    }
+
+    .section {
+        margin-bottom: 2.5rem;
+    }
+
+    .section h2 {
+        font-size: 1.5rem;
+        margin: 2rem 0 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid #E5E7EB;
+        color: #2C3E50;
+    }
+
+    .section h3 {
+        font-size: 1.2rem;
+        margin: 1.5rem 0 1rem;
+        color: #4A5568;
+    }
+
+    .section p {
+        margin: 1rem 0;
+        text-align: justify;
+        line-height: 1.8;
+    }
+
+    .section ul {
+        padding-left: 1.5rem;
+        margin: 1rem 0;
+    }
+
+    .section li {
+        margin: 0.5rem 0;
+        line-height: 1.8;
+    }
+
+    .last-updated {
+        margin-top: 3rem;
+        padding-top: 1rem;
+        border-top: 1px solid #E5E7EB;
+        font-size: 0.9rem;
+        color: #666;
+        text-align: center;
+    }
+
+    @media (max-width: 768px) {
+        .legal-content {
+            padding: 1rem;
+        }
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="legal-content">
+    <div class="legal-header">
+        <h1>プライバシーポリシー</h1>
+    </div>
+
+    <div class="section">
+        <h2>1. 個人情報の収集</h2>
+        <p>当サービスでは、以下の個人情報を収集する場合があります：</p>
+        <ul>
+            <li>学習データ（選択した難易度、スタイル、指定単語など）</li>
+            <li>利用状況データ（アクセス日時、使用機能など）</li>
+            <li>利用デバイス・OSに関する情報</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>2. 個人情報の利用</h2>
+        <p>収集した個人情報は、以下の目的で利用します：</p>
+        <ul>
+            <li>サービスの提供・維持・改善</li>
+            <li>ユーザー体験の向上</li>
+            <li>システムの最適化</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>3. 第三者への提供</h2>
+        <p>当サービスでは、以下の場合を除き、収集した個人情報を第三者に提供することはありません：</p>
+        <ul>
+            <li>法令に基づく場合</li>
+            <li>ユーザーの同意がある場合</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>4. Cookieについて</h2>
+        <p>当サービスでは、サービスの基本機能の提供のためCookieを使用しています。</p>
+    </div>
+
+    <div class="section">
+        <h2>5. プライバシーポリシーの変更</h2>
+        <p>当サービスは、必要に応じて、本プライバシーポリシーの内容を変更することがあります。変更後のプライバシーポリシーは、当サイトに掲載したときから効力を生じるものとします。</p>
+    </div>
+
+    <div class="section">
+        <h2>6. お問い合わせ</h2>
+        <p>当サービスに関するお問い合わせは、<a href="https://docs.google.com/forms/d/e/1FAIpQLSeIykvkRB7Oo4GeWcKhjIchqFM2bbcxTQyXQowPUq9GEehTHA/viewform?usp=header" target="_blank" rel="noopener noreferrer" class="contact-link">こちらのフォーム</a>から行うことができます。</p>
+    </div>
+
+    <div class="last-updated">
+        最終更新日: 2025年1月27日
+    </div>
+</div>
+{% endblock %}

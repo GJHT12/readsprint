@@ -1,0 +1,129 @@
+{% extends "base.html" %}
+
+{% block title %}ReadSprint{% endblock %}
+
+{% block content %}
+<section class="reading-section">
+    <div class="timer-section">
+        <div class="timer-display">
+            <span id="minutes">00</span>:<span id="seconds">00</span>
+        </div>
+        <div class="timer-controls">
+            <button id="startTimer" class="btn btn-primary">開始</button>
+            <button id="stopTimer" class="btn btn-secondary" disabled>停止</button>
+            <button id="resetTimer" class="btn btn-outline">リセット</button>
+        </div>
+    </div>
+
+    <div class="reading-container">
+        <div class="text-section">
+            <h2>英文</h2>
+            <div class="english-text">
+                {{ english_text|safe }}
+            </div>
+        </div>
+
+        <div class="text-section">
+            <h2>日本語訳</h2>
+            <div class="japanese-text">
+                {{ japanese_text|safe }}
+            </div>
+        </div>
+    </div>
+
+    <div class="action-buttons">
+        <a href="{{ url_for('main.customize') }}" class="btn btn-primary">
+            新しい文章を読む
+        </a>
+        <a href="{{ url_for('main.index') }}" class="btn btn-outline">
+            トップページに戻る
+        </a>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    let timerInterval;
+    let seconds = 0;
+    let isRunning = false;
+
+    const minutesDisplay = document.getElementById('minutes');
+    const secondsDisplay = document.getElementById('seconds');
+    const startButton = document.getElementById('startTimer');
+    const stopButton = document.getElementById('stopTimer');
+    const resetButton = document.getElementById('resetTimer');
+
+    function updateDisplay() {
+        const mins = Math.floor(seconds / 60);
+        const secs = seconds % 60;
+        minutesDisplay.textContent = String(mins).padStart(2, '0');
+        secondsDisplay.textContent = String(secs).padStart(2, '0');
+    }
+
+    function startTimer() {
+        if (!isRunning) {
+            isRunning = true;
+            startButton.disabled = true;
+            stopButton.disabled = false;
+            timerInterval = setInterval(() => {
+                seconds++;
+                updateDisplay();
+            }, 1000);
+        }
+    }
+
+    function stopTimer() {
+        if (isRunning) {
+            isRunning = false;
+            startButton.disabled = false;
+            stopButton.disabled = true;
+            clearInterval(timerInterval);
+        }
+    }
+
+    function resetTimer() {
+        stopTimer();
+        seconds = 0;
+        updateDisplay();
+    }
+
+    startButton.addEventListener('click', startTimer);
+    stopButton.addEventListener('click', stopTimer);
+    resetButton.addEventListener('click', resetTimer);
+</script>
+
+<style>
+    .timer-section {
+        text-align: center;
+        margin: 20px 0;
+        padding: 15px;
+        background-color: #f8f9fa;
+        border-radius: 8px;
+    }
+
+    .timer-display {
+        font-size: 2.5rem;
+        font-weight: bold;
+        font-family: monospace;
+        margin: 10px 0;
+        color: #333;
+    }
+
+    .timer-controls {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        margin: 15px 0;
+    }
+
+    .timer-controls button {
+        min-width: 80px;
+    }
+
+    .timer-controls button:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+</style>
+{% endblock %}

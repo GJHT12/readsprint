@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}ReadSprint{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div class="hero-content">
+        <h2>スピードと正確性をあなたのペースで。</h2>
+        <p class="hero-description">
+            ReadSprintは、多彩な英文で鍛える、新しいカタチの英語精読トレーニングアプリです。
+        </p>
+        <div class="cta-buttons">
+            <a href="{{ url_for('main.customize') }}" class="btn btn-primary">始める</a>
+        </div>
+    </div>
+</section>
+
+<section class="features">
+    <h2>ReadSprintの特徴</h2>
+    <div class="features-grid">
+        <div class="feature-card">
+            <h3>レベル別学習</h3>
+            <p>入門から最上級まで、5段階のレベルから選択可能です。</p>
+        </div>
+        <div class="feature-card">
+            <h3>多様な文章スタイル</h3>
+            <p>10の文章スタイルから選べます。多様な英文に接することができます。</p>
+        </div>
+        <div class="feature-card">
+            <h3>単語の指定機能</h3>
+            <p>特定の単語を含む文章の生成が可能です。学びたい単語を効率的に学習できます。</p>
+        </div>
+    </div>
+</section>
+{% endblock %}
